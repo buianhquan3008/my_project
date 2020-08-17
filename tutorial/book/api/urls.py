@@ -4,8 +4,11 @@ from django.conf.urls import url
 from django.urls import path
 
 urlpatterns = [
-    path('', BookList.as_view(), name='book-list'),
-    path('<int:pk>', BookDetail.as_view(), name='book-detail'),
+    path('', BookListView.as_view(), name='book-list'),
+    path('<int:pk>', BookDetailView.as_view(), name='book-detail'),
+    path('create', BookListCreateView.as_view(), name='book-detail'),
+    # path('update', BookListUpdateView.as_view(), name='book-detail'),
+    path('highscore/<int:pk>', high_score, name='highscore'),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

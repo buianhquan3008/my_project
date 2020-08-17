@@ -32,3 +32,15 @@ class Book(models.Model):
         db_table = 'd_book'
         verbose_name = "Sách"
         verbose_name_plural = "Sách"
+
+
+class HighScore(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    player_name = models.CharField(max_length=10)
+    score = models.IntegerField()
+
+
+class DataPoint(models.Model):
+    label = models.CharField(max_length=50)
+    x_coordinate = models.SmallIntegerField()
+    y_coordinate = models.SmallIntegerField()
